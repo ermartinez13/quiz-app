@@ -1,0 +1,64 @@
+:root {
+  background-color: #f8fafd;
+  font-size: 62.5%;
+
+  --navy: #000080;
+  --orange: #e58207;
+}
+/* Global */
+
+body {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 3.5rem;
+  color: var(--navy);
+}
+
+h1,
+h2,
+h3 {
+  padding-bottom: 1rem;
+}
+
+/* Utility-first CSS */
+.container {
+  width: 100vw;
+  height: 100vh;
+  max-width: 80rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container > * {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  font-size: 1.8rem;
+  color: var(--navy);
+  border: 0.1rem solid var(--orange);
+  width: 13rem;
+  padding: 1rem 0;
+  margin-bottom: 1.5rem;
+}

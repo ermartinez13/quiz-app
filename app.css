@@ -9,6 +9,7 @@
 
 body {
   text-align: center;
+  color: var(--navy);
 }
 
 a {
@@ -17,7 +18,6 @@ a {
 
 h1 {
   font-size: 3.5rem;
-  color: var(--navy);
 }
 
 h1,
@@ -61,4 +61,12 @@ h3 {
   width: 13rem;
   padding: 1rem 0;
   margin-bottom: 1.5rem;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.padding-sides {
+  padding: 0 2rem;
 }

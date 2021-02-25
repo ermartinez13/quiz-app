@@ -1,7 +1,7 @@
 :root {
-  background-color: #f8fafd;
+  background-color: var(--soft-blue);
   font-size: 62.5%;
-
+  --soft-blue: #f8fafd;
   --navy: #000080;
   --orange: #e58207;
 }
@@ -25,6 +25,18 @@ h1,
 h2,
 h3 {
   padding-bottom: 1rem;
+}
+
+input {
+  width: 13rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem 0.5rem;
+  font-size: 1.8rem;
+  border: 0.1rem solid var(--navy);
+}
+
+input::placeholder {
+  color: #aaa;
 }
 
 /* Utility-first CSS */
@@ -62,6 +74,14 @@ h3 {
   width: 13rem;
   padding: 1rem 0;
   margin-bottom: 1.5rem;
+  background-color: white;
+}
+
+.btn:hover {
+  cursor: pointer;
+  box-shadow: 0 0.4rem 1.4rem 0 rgba(229, 130, 7, 0.5);
+  transform: translateY(-0.3rem);
+  transition: transform 150ms;
 }
 
 .justify-center {
@@ -74,4 +94,8 @@ h3 {
 
 .justify-between {
   justify-content: space-between;
+}
+
+.bottom-margin {
+  margin-bottom: 5rem;
 }

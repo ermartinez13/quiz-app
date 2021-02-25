@@ -2,6 +2,7 @@ const question = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("choice-text"));
 const hudCounter = document.getElementById("question-counter");
 const hudScore = document.getElementById("score");
+const progressBar = document.getElementById("progressBar");
 
 let currentQuestion = {};
 let acceptingAnswers = false;
@@ -35,9 +36,8 @@ function getNewQuestion() {
 
   questionCounter++;
   setHudCounter();
-
+  setProgress();
   setQuestion();
-
   setChoices();
 
   acceptingAnswers = true;
@@ -57,7 +57,7 @@ choices.map((choice) => {
     selectedChoice.parentElement.classList.add(classToApply);
 
     if (classToApply === "correct") {
-      incrementAndSetScore(correctBonus);
+      setScore(correctBonus);
     }
 
     setTimeout(() => {
@@ -89,10 +89,14 @@ function setChoices() {
 }
 
 function setHudCounter() {
-  hudCounter.innerText = `${questionCounter}/${maxQuestions}`;
+  hudCounter.innerText = `Question ${questionCounter}/${maxQuestions}`;
 }
 
-function incrementAndSetScore(num) {
+function setScore(num) {
   score += num;
   hudScore.innerText = score;
+}
+
+function setProgress() {
+  progressBar.style.width = `${(questionCounter / maxQuestions) * 100}%`;
 }

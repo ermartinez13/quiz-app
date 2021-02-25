@@ -23,3 +23,11 @@
   transform: translateY(-0.3rem);
   transition: transform 150ms;
 }
+
+.correct {
+  background-color: #28a745;
+}
+
+.incorrect {
+  background-color: #dc3545;
+}

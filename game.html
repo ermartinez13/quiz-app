@@ -13,17 +13,18 @@
     <main class="container">
       <div class="padding-sides">
         <section id="hud" class="flex justify-between">
-          <div class="hud-item">
-            <p class="hud-prefix">Question</p>
-            <h2 id="question-counter" class="hud-text">0 / 0</h2>
+          <div>
+            <p id="question-counter" class="hud-text"></p>
+            <div class="progress-bar-wrapper">
+              <div id="progressBar"></div>
+            </div>
           </div>
-          <div class="hud-item">
-            <p class="hud-prefix">Score</p>
-            <h2 id="score" class="hud-text">0</h2>
+          <div>
+            <p class="hud-text">Score</p>
+            <h2 id="score">0</h2>
           </div>
         </section>
         <section id="game" class="flex flex-column">
-          <div id="hud"></div>
           <h1 id="question">Placeholder</h1>
           <div class="choice-container">
             <p class="choice-prefix">A</p>

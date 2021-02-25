@@ -6,6 +6,7 @@ let acceptingAnswers = false;
 let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
+let questions;
 
 const correctBonus = 10;
 const maxQuestions = 3;
@@ -13,7 +14,7 @@ const maxQuestions = 3;
 fetch("./questions.json")
   .then((res) => res.json())
   .then((data) => {
-    availableQuestions = data;
+    questions = data;
     startGame();
   })
   .catch((e) => {
@@ -21,9 +22,7 @@ fetch("./questions.json")
   });
 
 function startGame() {
-  questionCounter = 0;
-  score = 0;
-  // availableQuestions = [];
+  resetGameState();
   getNewQuestion();
 }
 
@@ -34,17 +33,9 @@ function getNewQuestion() {
 
   questionCounter++;
 
-  const questionIndex = Math.floor(Math.random() * availableQuestions.length);
-  currentQuestion = availableQuestions[questionIndex];
+  setQuestion();
 
-  availableQuestions.splice(questionIndex, 1);
-
-  question.innerText = currentQuestion.question;
-
-  choices.map((choice) => {
-    const choiceNumber = choice.dataset.number;
-    choice.innerText = currentQuestion[`choice` + choiceNumber];
-  });
+  setChoices();
 
   acceptingAnswers = true;
 }
@@ -59,10 +50,7 @@ choices.map((choice) => {
     const selectedChoiceNumber = Number(selectedChoice.dataset.number);
 
     const classToApply =
-      Number(selectedChoiceNumber) === currentQuestion.answer
-        ? "correct"
-        : "incorrect";
-
+      selectedChoiceNumber === currentQuestion.answer ? "correct" : "incorrect";
     selectedChoice.parentElement.classList.add(classToApply);
 
     setTimeout(() => {
@@ -72,4 +60,23 @@ choices.map((choice) => {
   });
 });
 
-// startGame();
+function resetGameState() {
+  questionCounter = 0;
+  score = 0;
+  availableQuestions = [...questions];
+}
+
+function setQuestion() {
+  const questionIndex = Math.floor(Math.random() * availableQuestions.length);
+  currentQuestion = availableQuestions[questionIndex];
+  // to prevent question from being repeated
+  availableQuestions.splice(questionIndex, 1);
+  question.innerText = currentQuestion.question;
+}
+
+function setChoices() {
+  choices.map((choice) => {
+    const choiceNumber = choice.dataset.number;
+    choice.innerText = currentQuestion[`choice` + choiceNumber];
+  });
+}

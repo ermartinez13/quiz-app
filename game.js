@@ -10,10 +10,20 @@ let availableQuestions = [];
 const correctBonus = 10;
 const maxQuestions = 3;
 
+fetch("./questions.json")
+  .then((res) => res.json())
+  .then((data) => {
+    availableQuestions = data;
+    startGame();
+  })
+  .catch((e) => {
+    console.log(e);
+  });
+
 function startGame() {
   questionCounter = 0;
   score = 0;
-  availableQuestions = [];
+  // availableQuestions = [];
   getNewQuestion();
 }
 

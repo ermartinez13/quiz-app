@@ -1,5 +1,7 @@
 const question = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("choice-text"));
+const hudCounter = document.getElementById("question-counter");
+const hudScore = document.getElementById("score");
 
 let currentQuestion = {};
 let acceptingAnswers = false;
@@ -32,6 +34,7 @@ function getNewQuestion() {
   }
 
   questionCounter++;
+  setHudCounter();
 
   setQuestion();
 
@@ -79,4 +82,8 @@ function setChoices() {
     const choiceNumber = choice.dataset.number;
     choice.innerText = currentQuestion[`choice` + choiceNumber];
   });
+}
+
+function setHudCounter() {
+  hudCounter.innerText = `${questionCounter}/${maxQuestions}`;
 }

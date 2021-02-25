@@ -31,3 +31,11 @@
 .incorrect {
   background-color: #dc3545;
 }
+
+.hud-prefix {
+  font-size: 1.6rem;
+}
+
+.hud-text {
+  font-size: 1.6rem;
+}

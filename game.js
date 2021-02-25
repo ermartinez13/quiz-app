@@ -21,11 +21,15 @@ function getNewQuestion() {
   if (availableQuestions.length === 0 || questionCounter >= maxQuestions) {
     return window.location.assign("/end.html");
   }
+
   questionCounter++;
+
   const questionIndex = Math.floor(Math.random() * availableQuestions.length);
   currentQuestion = availableQuestions[questionIndex];
+
   availableQuestions.splice(questionIndex, 1);
-  question.innerText = currentQuestion;
+
+  question.innerText = currentQuestion.question;
 
   choices.map((choice) => {
     const choiceNumber = choice.dataset.number;

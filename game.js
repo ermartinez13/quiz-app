@@ -56,6 +56,10 @@ choices.map((choice) => {
       selectedChoiceNumber === currentQuestion.answer ? "correct" : "incorrect";
     selectedChoice.parentElement.classList.add(classToApply);
 
+    if (classToApply === "correct") {
+      incrementAndSetScore(correctBonus);
+    }
+
     setTimeout(() => {
       selectedChoice.parentElement.classList.remove(classToApply);
       getNewQuestion();
@@ -86,4 +90,9 @@ function setChoices() {
 
 function setHudCounter() {
   hudCounter.innerText = `${questionCounter}/${maxQuestions}`;
+}
+
+function incrementAndSetScore(num) {
+  score += num;
+  hudScore.innerText = score;
 }

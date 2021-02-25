@@ -99,3 +99,9 @@ input::placeholder {
 .bottom-margin {
   margin-bottom: 5rem;
 }
+
+.btn[disabled] {
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}

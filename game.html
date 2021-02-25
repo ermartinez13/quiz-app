@@ -11,25 +11,38 @@
   </head>
   <body>
     <main class="container">
-      <section id="game" class="flex flex-column padding-sides">
-        <h1 id="question">Placeholder</h1>
-        <div class="choice-container">
-          <p class="choice-prefix">A</p>
-          <p class="choice-text" data-number="1">Placeholder</p>
-        </div>
-        <div class="choice-container">
-          <p class="choice-prefix">B</p>
-          <p class="choice-text" data-number="2">Placeholder</p>
-        </div>
-        <div class="choice-container">
-          <p class="choice-prefix">C</p>
-          <p class="choice-text" data-number="3">Placeholder</p>
-        </div>
-        <div class="choice-container">
-          <p class="choice-prefix">D</p>
-          <p class="choice-text" data-number="4">Placeholder</p>
-        </div>
-      </section>
+      <div class="padding-sides">
+        <section id="hud" class="flex justify-between">
+          <div class="hud-item">
+            <p class="hud-prefix">Question</p>
+            <h2 class="hud-text">0 / 0</h2>
+          </div>
+          <div class="hud-item">
+            <p class="hud-prefix">Score</p>
+            <h2 class="hud-text">0</h2>
+          </div>
+        </section>
+        <section id="game" class="flex flex-column">
+          <div id="hud"></div>
+          <h1 id="question">Placeholder</h1>
+          <div class="choice-container">
+            <p class="choice-prefix">A</p>
+            <p class="choice-text" data-number="1">Placeholder</p>
+          </div>
+          <div class="choice-container">
+            <p class="choice-prefix">B</p>
+            <p class="choice-text" data-number="2">Placeholder</p>
+          </div>
+          <div class="choice-container">
+            <p class="choice-prefix">C</p>
+            <p class="choice-text" data-number="3">Placeholder</p>
+          </div>
+          <div class="choice-container">
+            <p class="choice-prefix">D</p>
+            <p class="choice-text" data-number="4">Placeholder</p>
+          </div>
+        </section>
+      </div>
     </main>
     <script src="game.js"></script>
   </body>

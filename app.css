@@ -70,3 +70,7 @@ h3 {
 .padding-sides {
   padding: 0 2rem;
 }
+
+.justify-between {
+  justify-content: space-between;
+}

@@ -31,6 +31,7 @@ function startGame() {
 
 function getNewQuestion() {
   if (availableQuestions.length === 0 || questionCounter >= maxQuestions) {
+    saveScore();
     return window.location.assign("/end.html");
   }
 
@@ -99,4 +100,8 @@ function setScore(num) {
 
 function setProgress() {
   progressBar.style.width = `${(questionCounter / maxQuestions) * 100}%`;
+}
+
+function saveScore() {
+  localStorage.setItem("mostRecentScore", score);
 }

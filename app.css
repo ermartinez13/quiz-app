@@ -105,3 +105,7 @@ input::placeholder {
   box-shadow: none;
   transform: none;
 }
+
+.hidden {
+  display: none;
+}

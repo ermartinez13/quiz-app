@@ -3,6 +3,8 @@ const choices = Array.from(document.getElementsByClassName("choice-text"));
 const hudCounter = document.getElementById("question-counter");
 const hudScore = document.getElementById("score");
 const progressBar = document.getElementById("progressBar");
+const loader = document.getElementById("loader");
+const gameContainer = document.getElementById("gameContainer");
 
 let currentQuestion = {};
 let acceptingAnswers = false;
@@ -27,6 +29,7 @@ fetch("./questions.json")
 function startGame() {
   resetGameState();
   getNewQuestion();
+  showGame();
 }
 
 function getNewQuestion() {
@@ -104,4 +107,9 @@ function setProgress() {
 
 function saveScore() {
   localStorage.setItem("mostRecentScore", score);
+}
+
+function showGame() {
+  loader.classList.add("hidden");
+  gameContainer.classList.remove("hidden");
 }

@@ -18,7 +18,7 @@ saveBtn.addEventListener("click", (e) => {
   e.preventDefault();
   pushToHighScores();
   setHighScores();
-  window.location.assign("/");
+  window.location.assign("index.html");
 });
 
 function pushToHighScores() {
